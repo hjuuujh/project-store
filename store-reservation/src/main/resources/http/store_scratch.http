@@ -1,0 +1,273 @@
+### register store
+POST http://localhost:8080/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "name": "매장이름2",
+  "address": "대구광역시 북구 대학로 80",
+  "description": "매장설명",
+  "dates": ["2024-02-21","2024-01-21"],
+  "openAt": "10:00",
+  "closeAt": "22:00"
+}
+
+### add store reservation info
+POST http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+[
+  {
+    "storeId": 1,
+    "startAt": "11:00",
+    "endAt": "12:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 1,
+    "startAt": "12:00",
+    "endAt": "13:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 1,
+    "startAt": "14:00",
+    "endAt": "15:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  }
+]
+
+### register store
+POST http://localhost:8080/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "name": "광화문양가",
+  "address": "서울 종로구 종로 19",
+  "description": "한식",
+  "openAt": "11:00",
+  "closeAt": "21:40"
+}
+
+### add store reservation info
+POST http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiNjhUMEZBSzRlU2EySjBkdkpKbVlBPT0iLCJqdGkiOiJxaWpTQWpEdVVGUVZ5WmwxZDErbGdRPT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNTgyMDcwLCJleHAiOjE3MjI2Njg0NzB9._roKYyAdU50QJ-9eAAbBsDQg8s1ppDeiqSPVvUb1RUfbZI4fqrCpyO6QsxcmDY8fuJlgyv-5TjoNxIUiEZ3zWg
+
+[
+  {
+    "storeId": 2,
+    "startAt": "11:00",
+    "endAt": "12:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 2,
+    "startAt": "12:00",
+    "endAt": "14:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 2,
+    "startAt": "17:00",
+    "endAt": "19:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  }
+]
+
+### register store
+POST http://localhost:8080/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiNjhUMEZBSzRlU2EySjBkdkpKbVlBPT0iLCJqdGkiOiJxaWpTQWpEdVVGUVZ5WmwxZDErbGdRPT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNTgyMDcwLCJleHAiOjE3MjI2Njg0NzB9._roKYyAdU50QJ-9eAAbBsDQg8s1ppDeiqSPVvUb1RUfbZI4fqrCpyO6QsxcmDY8fuJlgyv-5TjoNxIUiEZ3zWg
+
+{
+  "name": "차알 광화문 디타워점",
+  "address": "서울 종로구 종로3길 17",
+  "description": "중식당",
+  "openAt": "11:00",
+  "closeAt": "21:00"
+}
+
+### add store reservation info
+POST http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+[
+  {
+    "storeId": 3,
+    "startAt": "11:00",
+    "endAt": "12:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 3,
+    "startAt": "13:00",
+    "endAt": "14:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 3,
+    "startAt": "17:00",
+    "endAt": "19:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  }
+]
+
+### register store
+POST http://localhost:8080/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzIxNDYwLCJleHAiOjE3MjI0MDc4NjB9.8aX5TRVS5sQR3aCFUpONG9uNcq0AUpBhM5YpcL6tfb4sKpnUi0uhPnRPosOJ0F2ydDgaeb5WSRc0E3qnBg0YUw
+
+{
+  "name": "익선디미방",
+  "address": "서울 종로구 돈화문로11나길 30",
+  "description": "양식",
+  "openAt": "11:00",
+  "closeAt": "22:00"
+}
+
+### add store reservation info
+POST http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzIxNDYwLCJleHAiOjE3MjI0MDc4NjB9.8aX5TRVS5sQR3aCFUpONG9uNcq0AUpBhM5YpcL6tfb4sKpnUi0uhPnRPosOJ0F2ydDgaeb5WSRc0E3qnBg0YUw
+
+[
+  {
+    "storeId": 4,
+    "startAt": "11:00",
+    "endAt": "12:00",
+    "minCount": 1,
+    "count": 20
+  },
+  {
+    "storeId": 4,
+    "startAt": "13:00",
+    "endAt": "14:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  },
+  {
+    "storeId": 4,
+    "startAt": "20:00",
+    "endAt": "22:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 20
+  }
+]
+
+### update store
+PUT http://localhost:8080/api/store
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "id": 1,
+  "name": "매장 이름 수정",
+  "address": "대구광역시 북구 대학로 85",
+  "description": "매장설명 수정",
+  "openAt": "18:00",
+  "closeAt": "22:00",
+  "infos": [
+    {
+      "storeId": 1,
+      "startAt": "10:00",
+      "endAt": "12:00",
+      "minCount": 1,
+      "maxCount": 4,
+      "count": 100
+    },
+    {
+      "storeId": 1,
+      "startAt": "12:00",
+      "endAt": "13:00",
+      "minCount": 1,
+      "maxCount": 4,
+      "count": 100
+    },
+    {
+      "storeId": 1,
+      "startAt": "14:00",
+      "endAt": "15:00",
+      "minCount": 1,
+      "maxCount": 4,
+      "count": 100
+    }
+  ]
+}
+
+### update store reservation info
+PATCH http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+[
+  {
+    "id": 1,
+    "storeId": 1,
+    "startAt": "10:00",
+    "endAt": "12:00",
+    "minCount": 1,
+    "maxCount": 4,
+    "count": 500,
+    "exist": false
+  }
+]
+
+### update store reservation date
+PATCH http://localhost:8080/api/store/reservation/date
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "id": 1,
+  "dates": ["2022-01-01","2022-01-03","2022-01-04"]
+}
+
+### update store reservation date closed
+PATCH http://localhost:8080/api/store/reservation/date/closed
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "id": 1,
+  "date": "2022-01-01",
+  "closed": -1
+}
+
+### delete store
+PATCH http://localhost:8080/api/store?id=4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzIxNDYwLCJleHAiOjE3MjI0MDc4NjB9.8aX5TRVS5sQR3aCFUpONG9uNcq0AUpBhM5YpcL6tfb4sKpnUi0uhPnRPosOJ0F2ydDgaeb5WSRc0E3qnBg0YUw
+
+### delete store reservation info
+DELETE http://localhost:8080/api/store/reservation/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "storeId": 1,
+  "ids": [2,3]
+}

@@ -1,0 +1,142 @@
+### make reservation success
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjU4MjA2MSwiZXhwIjoxNzIyNjY4NDYxfQ.4sUaoUniTuqozKffZYlFB-N3sDlB77exszWq6VXVKn13560tYiYri5Djklcf60-OxNIVlDkMoJ-3PaoTf4XAOQ
+
+{
+  "reservationInfoId": "1",
+  "reservationDate": "2022-01-03",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation success
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjUxMDE1NiwiZXhwIjoxNzIyNTk2NTU2fQ.E1aheqa731cRPfNXGD6tqPEkb4MzzBo8AIdTFPc0e1P0EsliraOq9IZzwNi9o6Ptjdsb4oibx9IppCKFnD0gXg
+
+{
+  "reservationInfoId": "6",
+  "reservationDate": "2024-07-25",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation success
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyMzc1MCwiZXhwIjoxNzIyNDEwMTUwfQ.KrACcjEiZGjwTH6iIhiEE50BFOdbfTmOx0yydAgOjvYM-GZrlHTj0xCbaQEgq6mVPVITPNYDNjDAmPkXPcRWfw
+
+{
+  "reservationInfoId": "7",
+  "reservationDate": "2024-07-25",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation success
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyMzc1MCwiZXhwIjoxNzIyNDEwMTUwfQ.KrACcjEiZGjwTH6iIhiEE50BFOdbfTmOx0yydAgOjvYM-GZrlHTj0xCbaQEgq6mVPVITPNYDNjDAmPkXPcRWfw
+
+{
+  "reservationInfoId": "8",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation fail NOT_FOUND_RESERVATION_INFO
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjU4MjA2MSwiZXhwIjoxNzIyNjY4NDYxfQ.4sUaoUniTuqozKffZYlFB-N3sDlB77exszWq6VXVKn13560tYiYri5Djklcf60-OxNIVlDkMoJ-3PaoTf4XAOQ
+
+{
+  "reservationInfoId": "111",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation fail LOWER_STORE_MIN_CAPACITY
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjU4MjA2MSwiZXhwIjoxNzIyNjY4NDYxfQ.4sUaoUniTuqozKffZYlFB-N3sDlB77exszWq6VXVKn13560tYiYri5Djklcf60-OxNIVlDkMoJ-3PaoTf4XAOQ
+
+{
+  "reservationInfoId": "4",
+  "phone": "01000000000",
+  "headCount": "0"
+}
+
+### make reservation fail OVER_STORE_MAX_CAPACITY
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjU4MjA2MSwiZXhwIjoxNzIyNjY4NDYxfQ.4sUaoUniTuqozKffZYlFB-N3sDlB77exszWq6VXVKn13560tYiYri5Djklcf60-OxNIVlDkMoJ-3PaoTf4XAOQ
+
+{
+  "reservationInfoId": "4",
+  "phone": "01000000000",
+  "headCount": "100"
+}
+
+### make reservation fail RESERVATION_CLOSED
+POST http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyMzc1MCwiZXhwIjoxNzIyNDEwMTUwfQ.KrACcjEiZGjwTH6iIhiEE50BFOdbfTmOx0yydAgOjvYM-GZrlHTj0xCbaQEgq6mVPVITPNYDNjDAmPkXPcRWfw
+
+{
+  "reservationInfoId": "2",
+  "phone": "01000000000",
+  "headCount": "3"
+}
+
+### make reservation status approved
+PATCH http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNTgyMDM0LCJleHAiOjE3MjI2Njg0MzR9.vcaHILjOGqvcOI6xWdUUgOMifAZL591B0Lmh0yT9zobwzzkyKtIuUBbJpRtEc7rYyR-xXq_LI_JIhItkKmDerg
+
+{
+  "reservationId": "1",
+  "status": "approved"
+}
+
+### make reservation status approved
+PATCH http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w
+
+{
+  "reservationId": "2",
+  "status": "approved"
+}
+
+### make reservation status approved
+PATCH http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzI0MDEzLCJleHAiOjE3MjI0MTA0MTN9.5DyqH8wG8LgArKgw3v8-k0HA_w6xJ6QMm3G3H-wKnyKgNe97Fs1rXS7m15D_5ZMcfX3hiVvBf9gDU_ARmp54Dw
+
+{
+  "reservationId": "3",
+  "status": "approved"
+}
+
+### make reservation status rejected
+PATCH http://localhost:8080/api/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyMzc1MCwiZXhwIjoxNzIyNDEwMTUwfQ.KrACcjEiZGjwTH6iIhiEE50BFOdbfTmOx0yydAgOjvYM-GZrlHTj0xCbaQEgq6mVPVITPNYDNjDAmPkXPcRWfw
+
+{
+  "reservationId": "4",
+  "status": "rejected"
+}
+
+### delete reservation
+DELETE http://localhost:8080/api/reservation/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjUxMDE1NiwiZXhwIjoxNzIyNTk2NTU2fQ.E1aheqa731cRPfNXGD6tqPEkb4MzzBo8AIdTFPc0e1P0EsliraOq9IZzwNi9o6Ptjdsb4oibx9IppCKFnD0gXg
+
+### visit store
+PATCH http://localhost:8080/api/reservation/visit?id=3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyMzc1MCwiZXhwIjoxNzIyNDEwMTUwfQ.KrACcjEiZGjwTH6iIhiEE50BFOdbfTmOx0yydAgOjvYM-GZrlHTj0xCbaQEgq6mVPVITPNYDNjDAmPkXPcRWfw
+
+

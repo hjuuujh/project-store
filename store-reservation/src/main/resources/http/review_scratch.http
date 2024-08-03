@@ -1,0 +1,63 @@
+### create review success
+POST http://localhost:8080/api/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjUxMDE1NiwiZXhwIjoxNzIyNTk2NTU2fQ.E1aheqa731cRPfNXGD6tqPEkb4MzzBo8AIdTFPc0e1P0EsliraOq9IZzwNi9o6Ptjdsb4oibx9IppCKFnD0gXg
+
+{
+  "reservationId": "2",
+  "rating": 4.3,
+  "comment": "후기를 남겨보겠습니다?"
+}
+
+### create review success
+POST http://localhost:8080/api/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyNDcyNywiZXhwIjoxNzIyNDExMTI3fQ.IuBA2CIy5PGAWxZMRXBaX4KuxQz6m9qZ87gP5CPxujUBx-NcohFv8la3LDWGIUqzR7-uzhiXfQ5lMDyKQkL20g
+
+{
+  "reservationId": "2",
+  "rating": 2.3,
+  "comment": "후기를 남겨보겠습니다다다"
+}
+
+### create review success
+POST http://localhost:8080/api/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyNDcyNywiZXhwIjoxNzIyNDExMTI3fQ.IuBA2CIy5PGAWxZMRXBaX4KuxQz6m9qZ87gP5CPxujUBx-NcohFv8la3LDWGIUqzR7-uzhiXfQ5lMDyKQkL20g
+
+{
+  "reservationId": "3",
+  "rating": 3.7,
+  "comment": "후기를 남겨보겠습니다아아앙아"
+}
+
+### update review success
+PATCH http://localhost:8080/api/review
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjUxMDE1NiwiZXhwIjoxNzIyNTk2NTU2fQ.E1aheqa731cRPfNXGD6tqPEkb4MzzBo8AIdTFPc0e1P0EsliraOq9IZzwNi9o6Ptjdsb4oibx9IppCKFnD0gXg
+
+{
+  "id": "1",
+  "rating": 4.8,
+  "comment": "후기를 수정해보겠습니다.?"
+}
+
+### delete review by customer success
+DELETE http://localhost:8080/api/review/customer?id=5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoVE02RVlvUURCTXVEbGxhTjh3eFFRPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjMyNDcyNywiZXhwIjoxNzIyNDExMTI3fQ.IuBA2CIy5PGAWxZMRXBaX4KuxQz6m9qZ87gP5CPxujUBx-NcohFv8la3LDWGIUqzR7-uzhiXfQ5lMDyKQkL20g
+
+### delete review by partner success
+DELETE http://localhost:8080/api/review/partner?id=4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyMzI0NzU3LCJleHAiOjE3MjI0MTExNTd9.sp_oP7K9KszvRBqoC3VkR6plKAbETpBokY3yOCVzykcetA3NvFpvUgz9qxeYxnTZLm9HgNPxOQm02nMQ1Pd7DA
+
+### search review by customer
+GET http://localhost:8080/api/review/search/customer?page=0&size=5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlYWg0WSthVnpjbzNDMDYwYWMvRk1nPT0iLCJqdGkiOiJTdWJIZUtVUlJyZVFZK1dTT25Ca3RnPT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcyMjUxMDE1NiwiZXhwIjoxNzIyNTk2NTU2fQ.E1aheqa731cRPfNXGD6tqPEkb4MzzBo8AIdTFPc0e1P0EsliraOq9IZzwNi9o6Ptjdsb4oibx9IppCKFnD0gXg
+
+### search review by partner and store
+GET http://localhost:8080/api/review/search/partner?storeId=1&page=0&size=5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJLei9BSlZhVDlLcHZpQ1ZicGY3cjdRPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX1BBUlRORVIiXSwiaWF0IjoxNzIyNDMwNTU4LCJleHAiOjE3MjI1MTY5NTh9.SChWrYvnWXl2jMOJkJj8Su-e3aBglFEL6flA7YCtpKjcyNOJ3xkzCoBhSNlXyLMBOeVs8R8SZteyY9yTIEYw0w

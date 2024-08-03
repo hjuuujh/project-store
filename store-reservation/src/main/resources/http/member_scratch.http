@@ -1,0 +1,66 @@
+### signup member
+POST http://localhost:8080/api/member/signup
+Content-Type: application/json
+
+{
+  "email": "user1@gmail.com",
+  "name": "user1",
+  "password": "qwerty",
+  "phone": "010123456789",
+  "roles": ["ROLE_PARTNER"]
+}
+
+### signin member
+POST http://localhost:8080/api/member/signin
+Content-Type: application/json
+
+{
+  "email": "user1@gmail.com",
+  "password": "qwerty"
+}
+
+### signup member
+POST http://localhost:8080/api/member/signup
+Content-Type: application/json
+
+{
+  "email": "user2@gmail.com",
+  "name": "user2",
+  "password": "qwerty",
+  "phone": "010123456789",
+  "roles": ["ROLE_CUSTOMER"]
+}
+
+### signin member
+POST http://localhost:8080/api/member/signin
+Content-Type: application/json
+
+{
+  "email": "user2@gmail.com",
+  "password": "qwerty"
+}
+
+### signup member
+POST http://localhost:8080/api/member/signup
+Content-Type: application/json
+
+{
+  "email": "user3@gmail.com",
+  "name": "user3",
+  "password": "qwerty",
+  "phone": "010123456789",
+  "roles": ["ROLE_PARTNER"]
+}
+
+### signin member
+POST http://localhost:8080/api/member/signin
+Content-Type: application/json
+
+{
+  "email": "user3@gmail.com",
+  "password": "qwerty"
+}
+
+### get member
+GET http://localhost:8080/api/member/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFQTZkVGZtZjRLNEkrSVYxMERLTWVnPT0iLCJqdGkiOiJDbVlEdjVNSzVZVXlpazhLR05Ed293PT0iLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIiwiUk9MRV9QQVJUTkVSIl0sImlhdCI6MTcyMTY0ODU4OSwiZXhwIjoxNzIxNzM0OTg5fQ.nxlexby--CVIY9RbV3GSl4ZAHnsDon4LgLmHTTFRIXzoLZm4M0gxdk2Ed8hxP8l-O0BRRC2NQsgTpSYLuLH30A

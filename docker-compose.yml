@@ -1,0 +1,54 @@
+version: "3"
+services:
+  db:
+    image: mysql:8.0.22
+    container_name: store-db
+    cap_add:
+      - SYS_NICE
+    environment:
+      MYSQL_DATABASE: store
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: 1234
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 3s
+      timeout: 20s
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/data:/var/lib/mysql
+    networks:
+      - store-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://store-db:3306/store?userSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "1234"
+    depends_on:
+      db:
+        condition: service_healthy
+    container_name: store-app
+    networks:
+      - store-network
+
+  web:
+    image: nginx
+    container_name: store-web
+    extra_hosts:
+      # 설정을 통해 nginx가 host ip를 받아올 수 있도록 세팅
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 80:80
+    volumes:
+      - ./conf/:/etc/nginx/conf.d
+    depends_on:
+      - app
+
+networks:
+  store-network:
