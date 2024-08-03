@@ -35,6 +35,7 @@
 - 파라미터 : 이메일, 이름, 비밀번호, 핸드폰번호, role
 - 성공 : 이메일, 이름, 핸드폰번호, role
 - 실패 
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |이미 등록된 이메일인 경우| HttpStatus.BAD_REQUEST | "이미 가입된 회원입니다." | ALREADY_REGISTERED_USER|	
