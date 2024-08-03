@@ -302,7 +302,7 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|본인 매장의 리뷰가 아닌 경우| HttpStatus.BAD_REQUEST |  UNMUNMATCHED_PARTNER_REVIEWATCHED_CUSTOMER_RESERVATION |"리뷰 작성자와 매장 관리자만 삭제가능합니다."| 
+|본인 매장의 리뷰가 아닌 경우| HttpStatus.BAD_REQUEST |  UNMUNMATCHED_PARTNER_REVIEW |"리뷰 작성자와 매장 관리자만 삭제가능합니다."| 
 |리뷰 삭제할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 24. 고객이 등록한 모든 리뷰 : GET - /api/review/search/customer
 - 헤더 : token
