@@ -38,7 +38,7 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
-|이미 등록된 이메일인 경우| HttpStatus.BAD_REQUEST | "이미 가입된 회원입니다." | ALREADY_REGISTERED_USER|	
+|이미 등록된 이메일인 경우| BAD_REQUEST | "이미 가입된 회원입니다." | ALREADY_REGISTERED_USER|	
 2. 로그인  POST /api/member/singin
 - Jwt token 리턴
 - 파라미터 : 이메일, 비밀번호
@@ -47,8 +47,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
-|이메일로 가입된 정보가 없는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
-|이메일과 패스워드가 일치하지 않는 경우| HttpStatus.BAD_REQUEST | LOGIN_CHECK_FAIL |"이메일과 패스워드를 확인해주세요." |	
+|이메일로 가입된 정보가 없는 경우| BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
+|이메일과 패스워드가 일치하지 않는 경우| BAD_REQUEST | LOGIN_CHECK_FAIL |"이메일과 패스워드를 확인해주세요." |	
 3. 고객 정보 : GET - /api/member
 - 토큰을 파싱해 해당 토큰 발급받은 유저 찾기
 - 파라미터 : 토큰
@@ -58,7 +58,7 @@
                                           
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
-|이메일로 가입된 정보가 없는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
+|이메일로 가입된 정보가 없는 경우| BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
 ### Store API
 1. 매장정보 등록 POST - /api/store
 - 주소정보 기입하면 카카오 api이용해 위도, 경도 변환해 저장
@@ -70,8 +70,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|매장명 중복인 경우| HttpStatus.BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
-|매장 마감시간이 오픈시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[매장 오픈시간 : , 마감시간 : ] 를 확인해주세요."|
+|매장명 중복인 경우| BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
+|매장 마감시간이 오픈시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[매장 오픈시간 : , 마감시간 : ] 를 확인해주세요."|
 2. 매장 예약 상세정보 등록 - /api/store/reservation/info
 - 헤더 : token
 - 파라미터 : 예약정보리스트(매장id, 예약가능시작시간, 예약가능마감시간, 최소인원, 최대인원)
@@ -81,9 +81,9 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
-|마감시간이 시작시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
-|시작시간이 이전 타임 마감시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
+|요청 유저 정보와 매장정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
+|마감시간이 시작시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
+|시작시간이 이전 타임 마감시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
 3. 매장정보 수정 PUT - /api/store
 - 헤더 : token
 - 파라미터 : 매장id, 매장명, 상세정보, 주소, 오픈시간, 마감시간
@@ -93,11 +93,11 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|매장명 중복인 경우| HttpStatus.BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
-|요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
-|매장 마감시간이 오픈시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[매장 오픈시간 : , 마감시간 : ] 를 확인해주세요."|
-|마감시간이 시작시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
-|시작시간이 이전 타임 마감시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
+|매장명 중복인 경우| BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
+|요청 유저 정보와 매장정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
+|매장 마감시간이 오픈시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[매장 오픈시간 : , 마감시간 : ] 를 확인해주세요."|
+|마감시간이 시작시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
+|시작시간이 이전 타임 마감시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
 4. 매장 예약 상세정보 수정 - PUT /api/store/reservation/info
 - 헤더 : token
 - 파라미터 : 예약정보리스트(매장id, 예약가능시작시간, 예약가능마감시간, 최소인원, 최대인원)
@@ -107,10 +107,10 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
-|매장 예약 상세정보에 해당하는 예약있는 경우| HttpStatus.BAD_REQUEST |  STILL_HAVE_RESERVATION |"해당 매장에 예약이 남아 있습니다."|
-|마감시간이 시작시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
-|시작시간이 이전 타임 마감시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
+|요청 유저 정보와 매장정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
+|매장 예약 상세정보에 해당하는 예약있는 경우| BAD_REQUEST |  STILL_HAVE_RESERVATION |"해당 매장에 예약이 남아 있습니다."|
+|마감시간이 시작시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
+|시작시간이 이전 타임 마감시간보다 빠른 경우| BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
 5. 예약 가능 날짜 수정 - PATCH /api/store/reservation/date
 - 헤더 : token
 - 파라미터 : 매장id, 예약가능날짜리스트 
@@ -120,7 +120,7 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
+|요청 유저 정보와 매장정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
 6. 예약 마감 여부 수정 - PATCH /api/store/reservation/date/closed
 - 헤더 : token
 - 파라미터 : 매장id, 해당날짜, 예약가능여부(-1: 예약 마감, int: 예약가능 인원)
@@ -130,8 +130,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
-|예약 가능한 날짜가아닌데 수정하려고 시도하는 경우| HttpStatus.BAD_REQUEST |  CANNOT_UPDATE_INFO |"예약이 열려있지 않은 날짜입니다."|
+|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
+|예약 가능한 날짜가아닌데 수정하려고 시도하는 경우| BAD_REQUEST |  CANNOT_UPDATE_INFO |"예약이 열려있지 않은 날짜입니다."|
 7. 매장정보 삭제 PATCH - /api/store
 - 헤더 : token
 - 파라미터 : 매장id
@@ -141,8 +141,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
-|이미 삭제된 매장인 경우| HttpStatus.BAD_REQUEST |  ALREADY_DELETED_STORE |"이미 삭제된 매장입니다."|
+|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
+|이미 삭제된 매장인 경우| BAD_REQUEST |  ALREADY_DELETED_STORE |"이미 삭제된 매장입니다."|
 8. 매장정보 삭제 PATCH - /api/store
 - 헤더 : token
 - 파라미터 : 매장 예약 상세정보 id 리스트, 매장 id
@@ -152,8 +152,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
-|매장 예약 상세정보에 해당하는 예약있는 경우| HttpStatus.BAD_REQUEST | STILL_HAVE_RESERVATION |"해당 매장에 예약이 남아 있습니다."|
+|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
+|매장 예약 상세정보에 해당하는 예약있는 경우| BAD_REQUEST | STILL_HAVE_RESERVATION |"해당 매장에 예약이 남아 있습니다."|
 9. 매장 리스트 - 이름으로 찾기 GET - /api/store/search?keyword=
 - 헤더 : token
 - 대문자, 소문자 상광없이 키워드를 포함하고 삭제되지 않은 매장들 반환 
@@ -187,13 +187,13 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
-|예약이 오픈되지 않은 날짜에 신청한 경우| HttpStatus.BAD_REQUEST | CANNOT_RESERVATION_DATE |"예약 가능한 날짜가 아닙니다."|
-|삭제된 매장에 신청한 경우| HttpStatus.BAD_REQUEST | ALREADY_DELETED_STORE |"이미 삭제된 매장입니다."|
-|예약 정보에 같은 날짜로 중복 신청하는 경우| HttpStatus.BAD_REQUEST | ALREADY_MAKE_RESERVATION |"예약정보가 존재합니다."|
-|예약 인원이 최소인원보다 적은 경우| HttpStatus.BAD_REQUEST | LOWER_STORE_MIN_CAPACITY |"예약 가능 인원이 부족합니다."|
-|예약 인원이 최대인원보다 많은 경우| HttpStatus.BAD_REQUEST | OVER_STORE_MAX_CAPACITY |"예약 가능인원을 초과하였습니다."|
-|마감된 정보에 신청한 경우| HttpStatus.BAD_REQUEST | RESERVATION_CLOSED |"예약이 마감되었습니다."|
+|요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
+|예약이 오픈되지 않은 날짜에 신청한 경우| BAD_REQUEST | CANNOT_RESERVATION_DATE |"예약 가능한 날짜가 아닙니다."|
+|삭제된 매장에 신청한 경우| BAD_REQUEST | ALREADY_DELETED_STORE |"이미 삭제된 매장입니다."|
+|예약 정보에 같은 날짜로 중복 신청하는 경우| BAD_REQUEST | ALREADY_MAKE_RESERVATION |"예약정보가 존재합니다."|
+|예약 인원이 최소인원보다 적은 경우| BAD_REQUEST | LOWER_STORE_MIN_CAPACITY |"예약 가능 인원이 부족합니다."|
+|예약 인원이 최대인원보다 많은 경우| BAD_REQUEST | OVER_STORE_MAX_CAPACITY |"예약 가능인원을 초과하였습니다."|
+|마감된 정보에 신청한 경우| BAD_REQUEST | RESERVATION_CLOSED |"예약이 마감되었습니다."|
 14. 매장 예약 수락/거절 : PATCH - /api/reservation
 - 헤더 : token
 - 파라미터 : 예약아이디, 상태(승인/거절)
@@ -203,12 +203,12 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|예약정보가 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION |"예약 정보가 존재하지 않습니다."|
-|예약 상세정보가 존재하지 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
-|요청 유저 정보와 매장 정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
-|이미 승인한 예약인 경우| HttpStatus.BAD_REQUEST |  ALREADY_CHANGE_STATUS |"이미 승인된 예약입니다."|
-|이미 거절한 예약인 경우| HttpStatus.BAD_REQUEST |  ALREADY_CHANGE_STATUS |"이미 거절된 예약입니다."|
-|신청인원이 예약 가능 잔여인원보다 많은 경우| HttpStatus.BAD_REQUEST |  OVER_RESERVATION_COUNT |"예약 가능 인원을 초과합니다."|
+|예약정보가 존재하지 않는 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION |"예약 정보가 존재하지 않습니다."|
+|예약 상세정보가 존재하지 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
+|요청 유저 정보와 매장 정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
+|이미 승인한 예약인 경우| BAD_REQUEST |  ALREADY_CHANGE_STATUS |"이미 승인된 예약입니다."|
+|이미 거절한 예약인 경우| BAD_REQUEST |  ALREADY_CHANGE_STATUS |"이미 거절된 예약입니다."|
+|신청인원이 예약 가능 잔여인원보다 많은 경우| BAD_REQUEST |  OVER_RESERVATION_COUNT |"예약 가능 인원을 초과합니다."|
 15. 매장 예약 취소 : DELETE - /api/reservation/{id}
 - 헤더 : token
 - 파라미터 : 예약아이디
@@ -218,8 +218,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|취소하려는 예약이 본인이 신청한 예약이 아닌 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
-|예약 상세정보가 존재하지 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다
+|취소하려는 예약이 본인이 신청한 예약이 아닌 경우| BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
+|예약 상세정보가 존재하지 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다
 ."|
 16. 매장 방문 확인 : POST - /api/reservation/visit
 - 헤더 : token
@@ -231,12 +231,12 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|취소하려는 예약이 본인이 신청한 예약이 아닌 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
-|예약이 거절당한 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 거절되었습니다."|
-|예약이 확정되지 않은 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 확인중입니다."|
-|예약한 날이 아닌 다른날 방문 확인 하는 경우| HttpStatus.BAD_REQUEST |  NOT_TODAY_RESERVATION |"[예약 날짜 : ] 를 확인해주세요."|
-|예약시간 10분전보다 일찍 방문확인 하는 경우| HttpStatus.BAD_REQUEST |  CANNOT_CHECK_YET |"[예약 시간 :  , 현재 시간 : ] 방문 확인은 10분전부터 가능합니다."|
-|예약 시간을 지나 방문 확인하는 경우| HttpStatus.BAD_REQUEST |  OVER_RESERVATION_TIME |"[예약 시간 : , 현재 시간 : ] 예약 시간이 지났습니다."|
+|취소하려는 예약이 본인이 신청한 예약이 아닌 경우| BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
+|예약이 거절당한 경우| BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 거절되었습니다."|
+|예약이 확정되지 않은 경우| BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 확인중입니다."|
+|예약한 날이 아닌 다른날 방문 확인 하는 경우| BAD_REQUEST |  NOT_TODAY_RESERVATION |"[예약 날짜 : ] 를 확인해주세요."|
+|예약시간 10분전보다 일찍 방문확인 하는 경우| BAD_REQUEST |  CANNOT_CHECK_YET |"[예약 시간 :  , 현재 시간 : ] 방문 확인은 10분전부터 가능합니다."|
+|예약 시간을 지나 방문 확인하는 경우| BAD_REQUEST |  OVER_RESERVATION_TIME |"[예약 시간 : , 현재 시간 : ] 예약 시간이 지났습니다."|
 17. 고객이 자신이 예약한 리스트 확인 : GET - /api/reservation/search/customer
 - 헤더 : token
 - 파라미터 : pageable
@@ -261,11 +261,11 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."|
-|방문하지 않은 예약에 리뷰를 등록하려고 하는 경우| HttpStatus.BAD_REQUEST |  VISIT_NOT_TRUE |"방문 정보가 존재하지 않습니다."|
-|5점 보다 높은 별점을 준 경우| HttpStatus.BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
-|등록 요청 고객이 해당예약에 이미 리뷰 등록한 경우| HttpStatus.BAD_REQUEST |  ALREADY_CREATED_REVIEW |"이미 리뷰를 작성하였습니다."|
-|리뷰 등록할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
+|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."|
+|방문하지 않은 예약에 리뷰를 등록하려고 하는 경우| BAD_REQUEST |  VISIT_NOT_TRUE |"방문 정보가 존재하지 않습니다."|
+|5점 보다 높은 별점을 준 경우| BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
+|등록 요청 고객이 해당예약에 이미 리뷰 등록한 경우| BAD_REQUEST |  ALREADY_CREATED_REVIEW |"이미 리뷰를 작성하였습니다."|
+|리뷰 등록할 매장이 존재하지 않는 경우| BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 21. 리뷰 수정 : PATCH - /api/review
 - 헤더 : token
 - 리뷰 작성자만 수정가능
@@ -277,9 +277,9 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
-|5점 보다 높은 별점을 준 경우| HttpStatus.BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
-|리뷰 등록할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
+|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
+|5점 보다 높은 별점을 준 경우| BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
+|리뷰 등록할 매장이 존재하지 않는 경우| BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 22. 고객이 자신이 등록한 리뷰 삭제 : DELETE - /api/review/customer
 - 헤더 : token
 - 리뷰 작성자와 매장 파트너만 삭제가능
@@ -290,8 +290,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
-|리뷰 삭제할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
+|리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
+|리뷰 삭제할 매장이 존재하지 않는 경우| BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 23. 파트너가 자신의 매장에 등록된 리뷰 삭제 : DELETE - /api/review/partner
 - 헤더 : token
 - 리뷰 작성자와 매장 파트너만 삭제가능
@@ -302,8 +302,8 @@
 
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
-|본인 매장의 리뷰가 아닌 경우| HttpStatus.BAD_REQUEST |  UNMUNMATCHED_PARTNER_REVIEW |"리뷰 작성자와 매장 관리자만 삭제가능합니다."| 
-|리뷰 삭제할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
+|본인 매장의 리뷰가 아닌 경우| BAD_REQUEST |  UNMATCHED_PARTNER_REVIEW |"리뷰 작성자와 매장 관리자만 삭제가능합니다."| 
+|리뷰 삭제할 매장이 존재하지 않는 경우| BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 24. 고객이 등록한 모든 리뷰 : GET - /api/review/search/customer
 - 헤더 : token
 - 파라미터 : Pageable
