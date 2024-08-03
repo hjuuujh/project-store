@@ -52,7 +52,7 @@
 - 파라미터 : 토큰
 - 결과
 - 성공 : id, 이메일, 이름, 핸드폰번호, role
-- 실패  
+- 실패                                                            
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |이메일로 가입된 정보가 없는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
