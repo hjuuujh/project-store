@@ -80,7 +80,7 @@
 - 실패
 
 |Case|HttpStatus|Error Code|Description|
-|------|-------|----------|---------|
+|------------|-------|----------|---------|
 |요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
 |마감시간이 시작시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약 시작시간 : , 마감시간 : ] 를 확인해주세요."|
 |시작시간이 이전 타임 마감시간보다 빠른 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_TIME |"[예약정보 이전타임 마감시간 : , 다음타임 시작시간: ] 를 확인해주세요."|
