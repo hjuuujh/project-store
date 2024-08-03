@@ -21,10 +21,10 @@
 - 리뷰 작성, 확인, 수정, 삭제
 
 ## 서비스 흐름도
-![erd.png](./erd.png)
+![flow.png](./flow.png)
 
 ## Erd
-![flow.png](./flow.png)
+![erd.png](./erd.png)
 
 ## API
 ### User API
@@ -256,3 +256,7 @@
 - 파라미터 : Pageable
 - 결과
 - 성공 : 리뷰 리스트
+
+## Dcoker
+- docker-compose로 Spring Boot + Mysql + Nginx 서비스 구축
+![docker.png](./docker.png)
