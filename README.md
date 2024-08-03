@@ -44,6 +44,7 @@
 - 파라미터 : 이메일, 비밀번호
 - 성공 : token
 - 실패 
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |이메일로 가입된 정보가 없는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
@@ -53,7 +54,8 @@
 - 파라미터 : 토큰
 - 결과
 - 성공 : id, 이메일, 이름, 핸드폰번호, role
-- 실패                                                            
+- 실패
+                                          
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |이메일로 가입된 정보가 없는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_USER |"일치하는 회원이 없습니다."|
@@ -65,6 +67,7 @@
 - 결과
 - 성공 : 파트너id, 매장명, 상세정보, 주소, 오픈시간, 마감시간, 위도, 경도, 별점, 삭제여부
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |매장명 중복인 경우| HttpStatus.BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
@@ -75,6 +78,7 @@
 - 결과
 - 성공 : 파트너id, 매장명, 상세정보, 주소, 오픈시간, 마감시간, 위도, 경도, 별점, 삭제여부, 예약정보리스트
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
@@ -86,6 +90,7 @@
 - 결과
 - 성공 : 매장id, 매장명, 상세정보, 주소, 오픈시간, 마감시간, 예약정보리스트(매장id, 예약가능시작시간, 예약가능마감시간, 최소인원, 최대인원)
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |매장명 중복인 경우| HttpStatus.BAD_REQUEST |  DUPLICATE_STORE_NAME |"매장명은 중복일 수 없습니다."|
@@ -99,6 +104,7 @@
 - 결과
 - 성공 : 파트너id, 매장명, 상세정보, 주소, 오픈시간, 마감시간, 위도, 경도, 별점, 삭제여부, 예약정보리스트
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
@@ -111,6 +117,7 @@
 - 결과
 - 성공 : 매장 정보
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
@@ -120,6 +127,7 @@
 - 결과
 - 성공 : 매장 정보
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
@@ -130,6 +138,7 @@
 - 결과
 - 성공 : 매장 정보
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
@@ -140,6 +149,7 @@
 - 결과
 - 성공 : 매장 정보
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
@@ -174,6 +184,7 @@
 - 결과
 - 성공 : id, 고객id, 매장id, 신청핸드폰번호, 예약상세정보id, 예약날짜, 예약인원, 상태, 방문여부
 - 실패
+
 |Case|HttpStatus|Error Code|Description|
 |------|-------|----------|---------|
 |요청 유저 정보와 매장 예약 상세정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
@@ -189,6 +200,7 @@
 - 결과
 - 성공 : 예약정보
 - 실패
+
 |예약정보가 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION |"예약 정보가 존재하지 않습니다."|
 |예약 상세정보가 존재하지 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
 |요청 유저 정보와 매장 정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_PARTNER_STORE |"매장 정보와 파트너 정보가 일치하지 않습니다."|
@@ -201,6 +213,7 @@
 - 결과
 - 성공 : 예약 정보
 - 실패
+
 |취소하려는 예약이 본인이 신청한 예약이 아닌 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
 |예약 상세정보가 존재하지 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다
 ."|
@@ -211,6 +224,7 @@
 - 결과
 - 성공 : 예약 정보
 - 실패
+
 |취소하려는 예약이 본인이 신청한 예약이 아닌 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
 |예약이 거절당한 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 거절되었습니다."|
 |예약이 확정되지 않은 경우| HttpStatus.BAD_REQUEST |  CHECK_RESERVATION_STATUS |"예약이 확인중입니다."|
@@ -238,6 +252,7 @@
 - 결과
 - 성공 : 예약 정보
 - 실패
+
 |리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."|
 |방문하지 않은 예약에 리뷰를 등록하려고 하는 경우| HttpStatus.BAD_REQUEST |  VISIT_NOT_TRUE |"방문 정보가 존재하지 않습니다."|
 |5점 보다 높은 별점을 준 경우| HttpStatus.BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
@@ -251,6 +266,7 @@
 - 성공 : 후기 정보 
 - 실패
 - 실패
+
 |리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
 |5점 보다 높은 별점을 준 경우| HttpStatus.BAD_REQUEST |  OVER_RATING_LIMIT |"별점은 최대 5점까지 가능합니다."|
 |리뷰 등록할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
@@ -261,6 +277,7 @@
 - 결과
 - 성공 : 리뷰 정보
 - 실패
+
 |리뷰 등록하는 고객정보와 예약 고객정보가 일치하지 않는 경우| HttpStatus.BAD_REQUEST |  UNMATCHED_CUSTOMER_RESERVATION |"고객 정보와 예약 정보가 일치하지 않습니다."| 
 |리뷰 삭제할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 23. 파트너가 자신의 매장에 등록된 리뷰 삭제 : DELETE - /api/review/partner
@@ -270,6 +287,7 @@
 - 결과
 - 성공 : 리뷰 정보
 - 실패
+
 |본인 매장의 리뷰가 아닌 경우| HttpStatus.BAD_REQUEST |  UNMUNMATCHED_PARTNER_REVIEWATCHED_CUSTOMER_RESERVATION |"리뷰 작성자와 매장 관리자만 삭제가능합니다."| 
 |리뷰 삭제할 매장이 존재하지 않는 경우| HttpStatus.BAD_REQUEST |  NOT_FOUND_STORE |"매장 예약 상세정보가 존재하지 않습니다."|
 24. 고객이 등록한 모든 리뷰 : GET - /api/review/search/customer
