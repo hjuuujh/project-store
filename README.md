@@ -219,8 +219,7 @@
 |Case|HttpStatus|Error Code|Description|
 |------------|-------|----------|---------|
 |취소하려는 예약이 본인이 신청한 예약이 아닌 경우| BAD_REQUEST |  UNMATCHED_MEMBER_RESERVATION |"예약 정보와 고객 정보가 일치하지 않습니다."|
-|예약 상세정보가 존재하지 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다
-."|
+|예약 상세정보가 존재하지 경우| BAD_REQUEST |  NOT_FOUND_RESERVATION_INFO |"매장 예약 상세정보가 존재하지 않습니다."|
 16. 매장 방문 확인 : POST - /api/reservation/visit
 - 헤더 : token
 - 매장 예약 10분전에 도착해 방문 확인
